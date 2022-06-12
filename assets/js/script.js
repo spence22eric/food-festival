@@ -1,3 +1,5 @@
+require("bootstrap");
+
 $(document).ready(function() {
   function createEl(htmlString, attrs, ...children) {
     if (typeof htmlString !== "string") {
@@ -9,7 +11,7 @@ $(document).ready(function() {
     if (typeof attrs === "object") {
       for (let key in attrs) {
         if (key.substring(0, 2) === "on") {
-          el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);
+          el.addEventListener(key.substring(2).toaLowerCase(), attrs[key]);
         } else {
           el.setAttribute(key, attrs[key]);
         }
